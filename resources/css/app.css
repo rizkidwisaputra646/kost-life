@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-black text-white font-sans antialiased;
+    }
+}
+
+:root {
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --bg: #000000;
+    --app-bg: #121212;
+    --card-bg: #1a1a1a;
+    --text-main: #ffffff;
+    --text-label: #94a3b8;
+    --border: #262626;
+}

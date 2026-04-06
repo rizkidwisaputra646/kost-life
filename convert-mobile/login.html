@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Kost-Life v1 (Dark)</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --bg: #000000;
+            --app-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text-main: #ffffff;
+            --text-label: #94a3b8;
+            --border: #262626;
+        }
+
+        body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .app-container { width: 100%; max-width: 400px; padding: 40px 24px; background-color: var(--app-bg); display: flex; flex-direction: column; align-items: center; }
+
+        header { text-align: center; margin-bottom: 32px; }
+        .logo-box { width: 64px; height: 64px; background: #262626; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.4); margin: 0 auto 16px; }
+        h1 { font-size: 1.8em; margin: 0; font-weight: 800; color: #fff; }
+        p.tagline { color: var(--text-label); font-size: 0.9em; margin-top: 4px; }
+
+        .auth-card { background: var(--card-bg); border-radius: 24px; padding: 24px; border: 1px solid var(--border); width: 100%; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-size: 0.85em; font-weight: 700; color: var(--text-label); }
+        input { background: #262626; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px; color: #fff; font-size: 1em; outline: none; transition: 0.2s; }
+        input:focus { border-color: var(--primary); }
+
+        .btn-auth { background: var(--primary); color: #000; padding: 16px; border-radius: 12px; border: none; font-weight: 800; font-size: 1.05em; cursor: pointer; margin-top: 8px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+        .btn-auth:active { transform: scale(0.98); }
+
+        .auth-footer { margin-top: 24px; text-align: center; color: var(--text-label); font-size: 0.9em; }
+        .auth-footer a { color: var(--primary); text-decoration: none; font-weight: 800; }
+
+        @media (min-width: 400px) { .app-container { border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); } }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-box"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <h1>Kost-Life</h1>
+            <p class="tagline">Pengelola Keuangan Kost Terbaik</p>
+        </header>
+
+        <form class="auth-card" action="dashboard.html">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="nama@email.com" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-auth">Masuk Aplikasi</button>
+        </form>
+
+        <div class="auth-footer">
+            Baru di sini? <a href="register.html">Buat Akun Sekarang</a>
+        </div>
+    </div>
+</body>
+</html>

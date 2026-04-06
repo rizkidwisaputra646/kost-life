@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Transaction - Figma Export</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --bg: #000000;
+            --app-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text-main: #ffffff;
+            --text-label: #94a3b8;
+            --border: #262626;
+        }
+
+        body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); display: flex; justify-content: center; }
+        .app-container { width: 100%; max-width: 400px; min-height: 100vh; background-color: var(--app-bg); position: relative; padding-bottom: 90px; }
+        header { padding: 24px 24px; }
+        h1 { font-size: 1.6em; margin: 0; font-weight: 800; }
+        .content { padding: 0 24px; }
+
+        .transaction-item { display: flex; align-items: center; padding: 16px; background: var(--card-bg); border-radius: 18px; border: 1px solid var(--border); }
+        .tx-icon-box { width: 44px; height: 44px; background: #262626; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; }
+        .tx-details { flex: 1; }
+        .tx-note { font-weight: 700; font-size: 0.95em; display: block; }
+        .tx-amount { font-weight: 800; font-size: 1.05em; color: #f87171; }
+
+        /* SweetAlert Popup UI */
+        .swal-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px);
+            display: flex; justify-content: center; align-items: center; z-index: 1000;
+        }
+        .swal-modal {
+            background: #1a1a1a; width: 80%; border-radius: 24px; padding: 24px 20px;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .swal-icon { width: 64px; height: 64px; border-radius: 50%; border: 3px solid #f59e0b; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+        .swal-title { font-size: 1.3em; font-weight: 800; margin: 0 0 8px 0; }
+        .swal-text { font-size: 0.9em; color: var(--text-label); margin-bottom: 20px; line-height: 1.5; }
+        .swal-flex { display: flex; width: 100%; gap: 12px; }
+        .swal-btn { flex: 1; padding: 14px; border-radius: 12px; border: none; font-weight: 800; cursor: pointer; }
+        .swal-btn-cancel { background: #262626; color: #fff; }
+        .swal-btn-confirm { background: #ef4444; color: #fff; }
+
+        @media (min-width: 400px) { body { padding: 40px 0; } }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header><h1>Hapus Data</h1></header>
+        <main class="content">
+            <div class="transaction-item">
+                <div class="tx-icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div class="tx-details"><span class="tx-note">Makan Malam</span><span class="tx-date">19:30 • 29 Mar</span></div>
+                <span class="tx-amount">-45rb</span>
+            </div>
+        </main>
+
+        <!-- UI State: Warning Popup -->
+        <div class="swal-overlay">
+            <div class="swal-modal">
+                <div class="swal-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <h2 class="swal-title">Hapus Transaksi?</h2>
+                <p class="swal-text">Data yang dihapus tidak dapat dikembalikan. Lanjutkan?</p>
+                <div class="swal-flex">
+                    <button class="swal-btn swal-btn-cancel" onclick="location.href='transactions.html'">Batal</button>
+                    <button class="swal-btn swal-btn-confirm" onclick="location.href='transactions.html'">Ya, Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

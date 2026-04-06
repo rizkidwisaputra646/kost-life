@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Kost-Life v1 (Dark)</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --bg: #000000;
+            --app-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text-main: #ffffff;
+            --text-label: #94a3b8;
+            --border: #262626;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); display: flex; justify-content: center; }
+        .app-container { width: 100%; max-width: 400px; min-height: 100vh; background-color: var(--app-bg); position: relative; padding-bottom: 90px; }
+        header { padding: 32px 24px; }
+        h1 { font-size: 1.8em; margin: 0; font-weight: 800; }
+        .content { padding: 0 24px; display: flex; flex-direction: column; gap: 24px; }
+
+        .filter-bar { display: flex; background: #262626; padding: 4px; border-radius: 14px; margin-bottom: 8px; }
+        .filter-tab { flex: 1; text-align: center; padding: 12px; font-size: 0.85em; font-weight: 700; color: var(--text-label); cursor: pointer; border-radius: 11px; }
+        .filter-tab.active { background: var(--primary); color: #000; }
+
+        .transaction-list { display: flex; flex-direction: column; gap: 12px; }
+        .date-label { font-size: 0.75em; font-weight: 800; color: var(--text-label); text-transform: uppercase; margin: 12px 0 4px 4px; letter-spacing: 0.05em; }
+
+        .transaction-item { display: flex; align-items: center; padding: 16px; background: var(--card-bg); border-radius: 18px; border: 1px solid var(--border); }
+        .tx-icon-box { width: 44px; height: 44px; background: #262626; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; }
+        .tx-details { flex: 1; }
+        .tx-note { font-weight: 700; font-size: 0.95em; display: block; margin-bottom: 2px; }
+        .tx-date { font-size: 0.8em; color: var(--text-label); }
+        .tx-amount { font-weight: 800; font-size: 1.05em; }
+        .tx-plus { color: var(--primary); }
+        .tx-minus { color: #f87171; }
+
+        .bottom-nav {
+            position: fixed; bottom: 0; width: 100%; max-width: 400px; height: 80px; background: rgba(26, 26, 26, 0.95);
+            display: flex; justify-content: space-around; align-items: center; border-top: 1px solid var(--border); backdrop-filter: blur(10px);
+        }
+        .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--text-label); font-size: 0.75em; font-weight: 600; }
+        .nav-item.active { color: var(--primary); }
+        .nav-icon { width: 24px; height: 24px; margin-bottom: 6px; }
+        .nav-add-btn { background: var(--primary); width: 56px; height: 56px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; margin-top: -45px; border: 4px solid var(--app-bg); }
+
+        @media (min-width: 400px) { body { padding: 40px 0; } }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header><h1>Riwayat</h1></header>
+        <main class="content">
+            <div class="filter-bar">
+                <div class="filter-tab active">Semua</div>
+                <div class="filter-tab">Masuk</div>
+                <div class="filter-tab">Keluar</div>
+            </div>
+            <div class="transaction-list">
+                <div class="date-label">Hari ini</div>
+                <div class="transaction-item">
+                    <div class="tx-icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <div class="tx-details"><span class="tx-note">Makan Malam</span><span class="tx-date">19:30 • 29 Mar</span></div>
+                    <span class="tx-amount tx-minus">-45rb</span>
+                </div>
+                <div class="date-label">Kemarin</div>
+                <div class="transaction-item">
+                    <div class="tx-icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg></div>
+                    <div class="tx-details"><span class="tx-note">Gaji Freelance</span><span class="tx-date">14:00 • 28 Mar</span></div>
+                    <span class="tx-amount tx-plus">+2jt</span>
+                </div>
+            </div>
+        </main>
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Home
+            </a>
+            <a href="transactions.html" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                Transaksi
+            </a>
+            <a href="add-transaction.html" class="nav-add-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></a>
+            <a href="budget-settings.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Budget
+            </a>
+            <a href="profile-settings.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Profile
+            </a>
+        </nav>
+    </div>
+</body>
+</html>
