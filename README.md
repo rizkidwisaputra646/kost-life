@@ -68,4 +68,4 @@ Hal ini memastikan Anda selalu tahu berapa banyak uang yang benar-benar bisa And
 
 ---
 
-> dikembangkan oleh **Developer** sebagai bagian dari **PKM-PI • Universitas Teknokrat Indonesia (UTI) 2026**.
+
