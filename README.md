@@ -2,7 +2,7 @@
 
 **Kost-Life** adalah aplikasi manajemen keuangan cerdas yang dirancang khusus untuk mahasiswa dan anak kost. Dengan antarmuka yang modern, premium, dan intuitif, Kost-Life membantu Anda menjaga keseimbangan antara jajanan harian dan target tabungan bulanan.
 
-![Mockup Preview](https://via.placeholder.com/1200x600/10b981/ffffff?text=Kost-Life+Premium+Dashboard)
+
 
 ## ✨ Fitur Unggulan
 
@@ -26,8 +26,8 @@
 
 1.  **Clone Repository**
     ```bash
-    git clone https://github.com/OngCapybara/Kost-Life.git
-    cd Kost-Life
+    git clone https://github.com/rizkidwisaputra646/kost-life.git
+    cd kost-life
     ```
 
 2.  **Install Dependensi**
